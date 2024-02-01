@@ -15,13 +15,14 @@
   <div class="container">
     <div class="card mb-3">
   
-  <div class="card-body">
-    <h5 class="card-title">{{ $comic->series }}</h5>
-    <p >{{ $comic->description }}</p>
-    <p ><small class="text-body-secondary">type: {{ $comic->type }}</small></p>
+      <div class="card-body">
+        <h5 class="card-title">{{ $comic->series }}</h5>
+        <p >{{ $comic->description }}</p>
+        <p class="text-body-secondary">type: {{ $comic->type }}</p>
+      </div>
+    </div>
+    <a href="{{ route('comics.index') }}">torna alla lista</a>
   </div>
-</div>
 
-  </div>
 </body>
 </html>
