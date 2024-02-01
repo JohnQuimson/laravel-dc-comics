@@ -12,7 +12,9 @@
 <body>
   <h1 class="text-center py-5 text-uppercase text-white">Comics Laravel</h1>
   <div class="container text-center">
-    <div class="row">
+   <a href="{{ route('comics.create') }}">New</a>
+
+    <div class="row pt-5">
 
     
     @foreach ($comics as $comic)
@@ -38,6 +40,9 @@
     
     @endforeach
     </div>
+
+   
     </div>
+    
 </body>
 </html>
