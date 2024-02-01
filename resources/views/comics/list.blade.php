@@ -29,6 +29,7 @@
             <p class="card-text fs-6">{{ $comic->description }}</p>
             <p>sale date: {{ $comic->sale_date }}</p>
             <span class="text-primary">{{ $comic->price }} $</span>
+            <a href="{{ route('comics.show', $comic->id )}}">View Details</a>
           </div>
         </div>
       </div>
