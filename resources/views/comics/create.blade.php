@@ -10,7 +10,7 @@
     @vite('resources/js/app.js')
 </head>
 <body class="text-white">
-  <h1 class="text-center py-5 text-uppercase text-white">New Comic</h1>
+  <h1 class="text-center py-5 text-uppercase text-warning">New Comic</h1>
 
   <div class="container">
     <form action="{{ route('comics.store') }}" method="POST">
@@ -53,6 +53,9 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <div class="pt-5">     
+      <a href="{{ route('comics.index') }}">< torna alla lista</a>
+    </div>
   </div>
 </body>
 </html>

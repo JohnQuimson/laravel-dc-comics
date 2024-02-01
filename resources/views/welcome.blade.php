@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>ciao</h1>
+    
+        <h1 class="text-center pt-5"><a href="{{ route('comics.index') }}">clicca per accedere alla lista dei comics</a></h1>
         {{-- <img src="{{ Vite::asset('resources/img/logo.png') }}" alt=""> --}}
-    </div>
+    
 </body>
 
 </html>

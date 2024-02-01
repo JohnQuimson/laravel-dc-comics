@@ -21,7 +21,7 @@
         <p class="text-body-secondary">type: {{ $comic->type }}</p>
       </div>
     </div>
-    <a href="{{ route('comics.index') }}">torna alla lista</a>
+    <a href="{{ route('comics.index') }}">< torna alla lista</a>
   </div>
 
 </body>
