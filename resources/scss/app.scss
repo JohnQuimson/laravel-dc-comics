@@ -2,5 +2,12 @@
 @import "_partials/reset.scss";
 
 body {
-    background-color: rgb(172, 172, 172);
+    background-color: #0f0e17;
+
+    .card-text {
+        max-height: 100px;
+        overflow-y: scroll;
+        border: 1px solid rgb(163, 163, 163);
+        border-radius: 10px;
+    }
 }
