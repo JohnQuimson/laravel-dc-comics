@@ -20,6 +20,7 @@
         <p >{{ $comic->description }}</p>
         <p class="text-body-secondary">type: {{ $comic->type }}</p>
       </div>
+      {{-- <a href="{{ route('comics.update' )}}">edita</a> --}}
     </div>
     <a href="{{ route('comics.index') }}">< torna alla lista</a>
   </div>
