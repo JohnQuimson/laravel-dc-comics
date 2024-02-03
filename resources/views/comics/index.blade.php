@@ -35,6 +35,16 @@
           </div>
         </div>
       </div>
+
+      {{-- form --}}
+      <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+        @csrf
+
+        @method('DELETE')
+
+        <input type="submit" value="Cancella">
+      </form>
+      {{-- form --}}
     </div>
   </div>
     
