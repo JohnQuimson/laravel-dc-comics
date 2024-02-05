@@ -5,7 +5,7 @@
 @endsection
 
 @section('main')
-    <div class="main-comics-list">
+    <main class="main-comics-list">
         <div class="container text-center">
             <a href="{{ route('comics.create') }}">New</a>
 
@@ -45,5 +45,5 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </main>
 @endsection

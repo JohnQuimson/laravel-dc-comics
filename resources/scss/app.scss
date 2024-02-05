@@ -1,6 +1,29 @@
 @import "~bootstrap/scss/bootstrap";
 @import "_partials/reset.scss";
 
+.welcome {
+    background-color: #0f0e17;
+
+    .btn {
+        background-color: #ff8906;
+        border: none;
+        text-transform: uppercase;
+
+        &:hover {
+            padding: 10px 20px;
+            transition: all 0.5s;
+        }
+    }
+
+    p {
+        color: #a7a9be;
+    }
+
+    span {
+        color: #ff8906;
+    }
+}
+
 .main-comics-list {
     background-color: red;
 }

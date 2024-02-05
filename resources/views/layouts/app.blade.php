@@ -20,11 +20,7 @@
     <body>
         @include('layouts.shared.header')
 
-        <main>
-
-            @yield('main')
-
-        </main>
+        @yield('main')
 
         @include('layouts.shared.footer')
     </body>
