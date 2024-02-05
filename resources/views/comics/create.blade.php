@@ -11,7 +11,7 @@
         <div class="container">
 
             {{-- Validation --}}
-            @if ($errors->any())
+            {{-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -19,7 +19,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif --}}
             {{-- Validation --}}
 
             <form action="{{ route('comics.store') }}" method="POST">
@@ -28,7 +28,11 @@
                 {{-- titolo --}}
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Titolo</label>
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror">
+
+                    @error('title')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 {{-- CONTENITORE 1 --}}
@@ -36,12 +40,20 @@
                     {{-- serie --}}
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Series</label>
-                        <input type="text" class="form-control" name="series">
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="series">
+
+                        @error('series')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     {{-- type --}}
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">type</label>
-                        <input type="text" class="form-control" name="type">
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="type">
+
+                        @error('type')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
@@ -50,13 +62,21 @@
                     {{-- data --}}
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Sale date</label>
-                        <input type="text" class="form-control" name="sale_date">
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="sale_date">
+
+                        @error('sale_date')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     {{-- prezzo --}}
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Price</label>
-                        <input type="number" class="form-control" name="price">
+                        <input type="number" class="form-control @error('title') is-invalid @enderror" name="price">
+
+                        @error('price')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
@@ -64,12 +84,19 @@
                 {{-- immagine --}}
                 <div class="mb-3">
                     <label class="form-label">Immagine</label>
-                    <input type="text" class="form-control" name="thumb">
+                    <input type="text" name="thumb" class="form-control @error('thumb') is-invalid @enderror">
+
+                    @error('thumb')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 {{-- descrizione --}}
                 <div class="mb-3">
                     <label class="form-label">Description</label>
-                    <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
+                    <textarea class="form-control @error('title') is-invalid @enderror" name="description" id="" cols="30" rows="10"></textarea>
+                    @error('description')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-success">Crea</button>
             </form>
