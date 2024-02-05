@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('header')
-    <h1 class="text-center py-5 text-uppercase ">Comics Laravel</h1>
+    <header class="header-comics-list">
+        <h1 class="text-center py-5 text-uppercase ">Comics Laravel</h1>
+    </header>
 @endsection
 
 @section('main')
     <main class="main-comics-list">
         <div class="container text-center">
-            <a href="{{ route('comics.create') }}">New</a>
+            <a href="{{ route('comics.create') }}" class="btn btn-warning text-white">Add Comic</a>
 
             <div class="row pt-5">
 
@@ -23,23 +25,26 @@
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <h3 class="card-title">{{ $comic->title }}</h3>
-                                        <p class="card-text fs-6">{{ $comic->description }}</p>
+
                                         <p>sale date: {{ $comic->sale_date }}</p>
-                                        <span class="text-primary">{{ $comic->price }} $</span>
-                                        <a href="{{ route('comics.show', $comic->id) }}">View Details</a>
+                                        <span class="text-primary fs-1">{{ $comic->price }} $</span>
+
+                                        <div class="btn-container d-flex justify-content-around align-items-end">
+                                            {{-- Details --}}
+                                            <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-info">View Details</a>
+
+                                            {{-- Delete --}}
+                                            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="submit" value="Cancella" class="btn btn-danger">
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            {{-- form --}}
-                            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                                @csrf
 
-                                @method('DELETE')
-
-                                <input type="submit" value="Cancella">
-                            </form>
-                            {{-- form --}}
                         </div>
                     </div>
                 @endforeach

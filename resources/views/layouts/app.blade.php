@@ -18,7 +18,7 @@
     </head>
 
     <body>
-        @include('layouts.shared.header')
+        @yield('header')
 
         @yield('main')
 
