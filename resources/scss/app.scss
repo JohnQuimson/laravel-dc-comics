@@ -76,3 +76,26 @@
         color: white;
     }
 }
+
+// EDIT ******************
+
+.header-edit {
+    background-color: #0f0e17;
+
+    h1 {
+        margin: 0;
+        color: #ff8906;
+        text-transform: uppercase;
+    }
+}
+
+.main-edit {
+    background-color: #0f0e17;
+    color: #e53170;
+
+    input,
+    textarea {
+        background-color: transparent;
+        color: white;
+    }
+}
