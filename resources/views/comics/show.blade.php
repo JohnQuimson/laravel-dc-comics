@@ -1,38 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Details Comic</title>
+@extends('layouts.app')
 
-  {{-- import js & scss --}}
-    @vite('resources/js/app.js')
-</head>
-<body>
-  <h1 class="text-warning text-center py-4">{{ $comic->title }}</h1>
+@section('header')
+    <h1 class="text-warning text-center py-4">{{ $comic->title }}</h1>
+@endsection
 
-  <div class="container">
-    <div class="card mb-3">
-  
-      <div class="card-body">
-        <h5 class="card-title">{{ $comic->series }}</h5>
-        <p >{{ $comic->description }}</p>
-        <p class="text-body-secondary">type: {{ $comic->type }}</p>
-      </div>
-      {{-- <a href="{{ route('comics.update' )}}">edita</a> --}}
-      {{-- form --}}
-      <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-        @csrf
+@section('main')
+    <div class="container">
+        <div class="card mb-3">
 
-        @method('DELETE')
+            <div class="card-body">
+                <h5 class="card-title">{{ $comic->series }}</h5>
+                <p>{{ $comic->description }}</p>
+                <p class="text-body-secondary">type: {{ $comic->type }}</p>
+            </div>
+            {{-- <a href="{{ route('comics.update' )}}">edita</a> --}}
+            {{-- form --}}
+            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                @csrf
 
-        <input type="submit" value="Cancella">
-      </form>
-      {{-- form --}}
+                @method('DELETE')
+
+                <input type="submit" value="Cancella">
+            </form>
+            {{-- form --}}
+
+            <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary">Modifica</a>
+
+        </div>
+        <a href="{{ route('comics.index') }}">
+            < torna alla lista</a>
     </div>
-    <a href="{{ route('comics.index') }}">< torna alla lista</a>
-  </div>
-
-</body>
-</html>
+@endsection
