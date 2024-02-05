@@ -9,6 +9,19 @@
 @section('main')
     <main class="main-create">
         <div class="container">
+
+            {{-- Validation --}}
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            {{-- Validation --}}
+
             <form action="{{ route('comics.store') }}" method="POST">
                 @csrf
 
