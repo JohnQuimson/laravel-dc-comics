@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h3 class="card-title">{{ $comic->title }}</h3>
+                                        <h3 class="card-title fs-5">{{ $comic->title }}</h3>
 
                                         <p>sale date: {{ $comic->sale_date }}</p>
                                         <span class="text-primary fs-1">{{ $comic->price }} $</span>
