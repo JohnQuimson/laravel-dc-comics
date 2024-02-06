@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
-use Dotenv\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -122,28 +122,27 @@ class ComicController extends Controller
             'title' => 'required|max:70',
             'description' => 'required|max:950',
             'thumb' => 'required|url|ends_with:png,jpg,webp|max:480',
-            'price' => 'required|numeric|decimal:2|max:10',
+            'price' => 'required|numeric|max:10',
             'series' => 'required|max:90',
             'sale_date' => 'required',
             'type' => 'required|max:25',
         ], [
             'title.required' => 'Il titolo è obbligatorio',
-            'title.max' => 'Il titolo deve avere massimo 70 caratteri',
+            'title.max' => 'Il titolo deve avere massimo :max caratteri',
             'description.required' => 'Il campo description è obbligatorio',
-            'description.max' => 'Il campo description deve avere massimo 950 caratteri',
+            'description.max' => 'Il campo description deve avere massimo :max caratteri',
             'thumb.required' => 'Il campo thumb è obbligatorio',
             'thumb.url' => 'Il campo thumb deve essere un url',
             'thumb.ends_with' => 'Il campo thumb non termina con png, jpg, webp',
-            'thumb.max' => 'Il campo thumb deve avere massimo 480 caratteri',
+            'thumb.max' => 'Il campo thumb deve avere massimo :max caratteri',
             'price.required' => 'Il campo price è obbligatorio',
             'price.number' => 'Il campo price deve essere un numero',
-            'price.decimal' => 'Il campo price deve avere 2 numeri decimali',
-            'price.max' => 'Il campo price deve avere deve avere massimo 10 caratteri',
+            'price.max' => 'Il campo price deve avere deve avere massimo :max caratteri',
             'series.required' => 'Il campo series è obbligatorio',
-            'series.max' => 'Il campo series deve avere deve avere massimo 90 caratteri',
+            'series.max' => 'Il campo series deve avere deve avere massimo :max caratteri',
             'sale_date.required' => 'Il campo sale_date è obbligatorio',
             'type.required' => 'Il campo type è obbligatorio',
-            'type.max' => 'Il campo type deve avere deve avere massimo 25 caratteri',
+            'type.max' => 'Il campo type deve avere deve avere massimo :max caratteri',
 
         ])->validate();
 
